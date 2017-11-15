@@ -3,10 +3,12 @@ package es.urjc.javsan;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import org.apache.tomcat.jni.User;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.gargoylesoftware.htmlunit.javascript.host.media.AudioBuffer;
+
 import org.junit.Test;
 
 import es.urjc.javsan.master.entities.Product;
@@ -18,7 +20,7 @@ public class ProductTest {
 	private Product productTwo;
 	private Product productThree;
 	
-	private User obj;
+	private String obj;
 	
 	@Before 
 	public void initialize() {
