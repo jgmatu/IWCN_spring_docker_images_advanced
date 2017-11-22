@@ -55,4 +55,26 @@ test pasados y completamente empaquetada para directamente ejecutar la aplicaci�
       # Punto de entrada del contenedor. Al arrancar el contendor arrancará desde este comando.
       ENTRYPOINT ["java", "-jar", "/web.jar"]
 
-####
+#### Creación de la imagen a partir del fichero Dockerfile
+
+Una vez tenemos el fichero Dockerfile creamos la imagen desde el fichero Dockerfile con build
+apuntando donde está el Dockerfile.
+
+  docker build .
+
+  Sending build context to Docker daemon 52.72 MB
+  Step 1/5 : FROM java:8
+   ---> d23bdf5b1b1b
+  Step 2/5 : EXPOSE 8080
+   ---> Using cache
+   ---> 2447580cd6d0
+  Step 3/5 : VOLUME /tmp
+   ---> Using cache
+   ---> 2d6c1053e085
+  Step 4/5 : ADD /target/ManagementProductsAPIRestServer-0.0.1-SNAPSHOT.jar web.jar
+   ---> Using cache
+   ---> dc385db516cb
+  Step 5/5 : ENTRYPOINT java -jar /web.jar
+   ---> Using cache
+   ---> 8e7fcc7c91ba
+  Successfully built 8e7fcc7c91ba
