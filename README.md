@@ -114,7 +114,7 @@ Para finalizar realizaremos una petición REST desde el navegador a el servidor 
             "description" : "example",
             "price" : 1.0
       }
-      localhost:8080/list
+      localhost:8080/list GET
       [
             {
                   "code": 1,
