@@ -24,3 +24,27 @@ nuevas características de docker.
 El comando history de docker muestra la historia de una imagen y de ahí sacar un Dockerfile.
 
 ### Creación de un DockerFile para el servidor web compilado en un archivo .jar
+
+#### Obtener el fichero .jar
+
+Primero deberemos crear un fichero .jar empaquetando todo el proyecto java realizado con maven.
+
+Maven gestión del ciclo de vida de una aplicación en las que se incluye la gestión de dependencias.
+
+      mvn clean install verify package
+
+Una vez empaquetada la aplicación nos aparecerá en target el archivo jar con todas las dependencias, los
+test pasados y completamente empaquetada para directamente ejecutar la aplicación web desde el fichero .jar
+
+      ManagementProductsAPIRestServer-0.0.1-SNAPSHOT.jar
+
+#### Realizar el fichero Dockerfile para la aplicación java 8.
+
+      FROM java:8 // Obtención de contenedor base con Java 8.
+
+      EXPOSE 8080 // Exposición del puerto de la imagen cuando se realice el contendor
+      VOLUME /tmp // Dentro del FS del host donde va a tener el chroot el contenedor.
+
+      ADD /target/ManagementProductsAPIRestServer-0.0.1-SNAPSHOT.jar web.jar // Añadir al contenedor el fichero .jar con la aplicación
+
+      ENTRYPOINT ["java", "-jar", "/web.jar"] // Punto de entrada del contenedor. Al arrancar el contendor arrancará desde este comando.
