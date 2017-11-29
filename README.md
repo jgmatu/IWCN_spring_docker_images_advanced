@@ -114,7 +114,7 @@ Para finalizar realizaremos una petición REST desde el navegador a el servidor 
             "description" : "example",
             "price" : 1.0
       }
-      localhost:8080/list GET
+      localhost:8080/list
       [
             {
                   "code": 1,
@@ -128,4 +128,32 @@ Para finalizar realizaremos una petición REST desde el navegador a el servidor 
                   "description" : "example",
                   "price" : 1.0
             }
+
       ]
+
+### Subida de la imagen a Dockerhub.
+
+Para subir una imagen a dockerhub, debemos crear una cuenta en la página web de [dockerhub](https://hub.docker.com)
+Una vez dados de alta en dockerhub hay que loguearse en la máquina local.
+
+      $ docker login // Nos logueamos en dockerhub en local.
+
+Creamos un tag de la imagen con el identificador de docker hub-
+
+      $ docker tag <imagen> <idHub>/<tag>
+
+
+Cuando creamos la etiqueta de la imagen ya podemos subir la imagen a dockerhub.
+
+      $ docker push fjgutierrezs91/web
+      The push refers to a repository [docker.io/fjgutierrezs91/web]
+      0634d953f411: Pushed
+      35c20f26d188: Mounted from library/java
+      c3fe59dd9556: Mounted from library/java
+      6ed1a81ba5b6: Mounted from library/java
+      a3483ce177ce: Mounted from library/java
+      ce6c8756685b: Mounted from library/java
+      30339f20ced0: Mounted from library/java
+      0eb22bfb707d: Mounted from library/java
+      a2ae92ffcd29: Mounted from library/java
+      latest: digest: sha256:9a53d8854bff59ac4e2c6cd3bad7ae1dc3800546e984c05ef07fb09bb26926f5 size: 2212
