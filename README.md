@@ -140,12 +140,12 @@ Una vez dados de alta en dockerhub hay que loguearse en la máquina local.
 
 Creamos un tag de la imagen con el identificador de docker hub-
 
-      $ docker tag <imagen> <idHub>/<tag>
+      $ docker tag web fjgutierrezs91/web
 
 
 Cuando creamos la etiqueta de la imagen ya podemos subir la imagen a dockerhub.
 
-      $ docker push <idHub>/<tag>
+      $ docker push fjgutierrezs91/web
       The push refers to a repository [docker.io/fjgutierrezs91/web]
       0634d953f411: Pushed
       35c20f26d188: Mounted from library/java
