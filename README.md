@@ -145,7 +145,7 @@ Creamos un tag de la imagen con el identificador de docker hub-
 
 Cuando creamos la etiqueta de la imagen ya podemos subir la imagen a dockerhub.
 
-      $ docker push fjgutierrezs91/web
+      $ docker push <idHub>/<tag>
       The push refers to a repository [docker.io/fjgutierrezs91/web]
       0634d953f411: Pushed
       35c20f26d188: Mounted from library/java
